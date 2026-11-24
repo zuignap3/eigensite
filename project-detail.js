@@ -109,6 +109,8 @@ function render(project) {
   }
   const external = link('Bekijk het project ↗', project.link);
   if (external) links.append(external);
+  const source = link('Bekijk de code op GitHub ↗', project.github);
+  if (source) links.append(source);
   if (links.childElementCount) content.append(links);
 }
 fetch('data/' + collection + '.json', {cache:'no-cache'})
