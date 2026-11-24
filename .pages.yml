@@ -18,9 +18,8 @@ content:
         required: true
       - name: categorie
         label: Categorie
-        type: select
-        options:
-          values: [Video, Fotografie, Grafisch ontwerp, CMD, Overig]
+        type: string
+        required: true
       - name: jaar
         label: Jaar
         type: string
