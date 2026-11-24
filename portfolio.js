@@ -70,7 +70,8 @@ function openProject(project) {
 }
 function renderFilters() {
   const categories = [...new Set(projects.map(project => String(project.categorie || 'Overig').trim() || 'Overig'))].sort((a, b) => a.localeCompare(b, 'nl'));
-  if (activeFilter !== 'Alles' && !categories.includes(activeFilter)) activeFilter = 'Alles';
+  if (categories.length === 1) activeFilter = categories[0];
+  else if (activeFilter !== 'Alles' && !categories.includes(activeFilter)) activeFilter = 'Alles';
   filterContainer.replaceChildren();
   filterContainer.hidden = categories.length === 0;
   for (const category of [...(categories.length > 1 ? ['Alles'] : []), ...categories]) {
