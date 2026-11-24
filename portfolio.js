@@ -3,7 +3,7 @@ const grid = document.querySelector('#project-grid');
 const count = document.querySelector('#project-count');
 const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
-const filters = [...document.querySelectorAll('[data-filter]')];
+const filterContainer = document.querySelector('#portfolio-filters');
 let projects = [];
 let activeFilter = 'Alles';
 
@@ -67,8 +67,21 @@ function openProject(project) {
   dialogContent.append(links);
   dialog.showModal();
 }
+function renderFilters() {
+  const categories = [...new Set(projects.map(project => String(project.categorie || 'Overig').trim() || 'Overig'))].sort((a, b) => a.localeCompare(b, 'nl'));
+  if (activeFilter !== 'Alles' && !categories.includes(activeFilter)) activeFilter = 'Alles';
+  filterContainer.replaceChildren();
+  for (const category of ['Alles', ...categories]) {
+    const button = node('button', 'filter-chip' + (category === activeFilter ? ' is-active' : ''), category);
+    button.type = 'button';
+    button.dataset.filter = category;
+    button.setAttribute('aria-pressed', String(category === activeFilter));
+    button.addEventListener('click', () => { activeFilter = category; renderFilters(); render(); });
+    filterContainer.append(button);
+  }
+}
 function render() {
-  const shown = projects.filter(project => activeFilter === 'Alles' || project.categorie === activeFilter);
+  const shown = projects.filter(project => activeFilter === 'Alles' || (String(project.categorie || 'Overig').trim() || 'Overig') === activeFilter);
   count.textContent = shown.length + (shown.length === 1 ? ' PROJECT' : ' PROJECTEN');
   grid.replaceChildren();
   if (!shown.length) {
@@ -93,18 +106,9 @@ function render() {
     grid.append(card);
   }
 }
-filters.forEach(button => button.addEventListener('click', () => {
-  activeFilter = button.dataset.filter;
-  filters.forEach(item => {
-    const selected = item === button;
-    item.classList.toggle('is-active', selected);
-    item.setAttribute('aria-pressed', String(selected));
-  });
-  render();
-}));
 fetch('data/portfolio.json', {cache: 'no-cache'})
   .then(response => { if (!response.ok) throw new Error('Portfolio kon niet geladen worden'); return response.json(); })
-  .then(data => { if (!Array.isArray(data)) throw new Error('Portfolio heeft niet het verwachte formaat'); projects = data; render(); })
+  .then(data => { if (!Array.isArray(data)) throw new Error('Portfolio heeft niet het verwachte formaat'); projects = data; renderFilters(); render(); })
   .catch(() => {
     count.textContent = 'NIET BESCHIKBAAR';
     grid.replaceChildren(node('p', 'portfolio-state', 'Projecten konden niet worden geladen. Probeer de pagina later opnieuw.'));
