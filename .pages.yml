@@ -38,3 +38,103 @@ content:
       - name: link
         label: Link naar het project
         type: string
+
+  - name: projecten
+    label: Persoonlijke projecten
+    type: file
+    path: data/projecten.json
+    format: json
+    list: true
+    fields:
+      - name: titel
+        label: Projectnaam
+        type: string
+        required: true
+      - name: categorie
+        label: Categorie (zelf typen)
+        type: string
+        required: true
+      - name: jaar
+        label: Jaar
+        type: string
+      - name: samenvatting
+        label: Korte beschrijving
+        type: text
+      - name: beschrijving
+        label: Uitgebreide beschrijving
+        type: text
+      - name: afbeelding
+        label: Omslagafbeelding
+        type: image
+      - name: video
+        label: Videolink
+        type: string
+      - name: link
+        label: Projectlink
+        type: string
+  - name: playground
+    label: Playground
+    type: file
+    path: data/playground.json
+    format: json
+    list: true
+    fields:
+      - name: titel
+        label: Naam
+        type: string
+        required: true
+      - name: categorie
+        label: Categorie (zelf typen)
+        type: string
+        required: true
+      - name: jaar
+        label: Jaar
+        type: string
+      - name: samenvatting
+        label: Korte beschrijving
+        type: text
+      - name: beschrijving
+        label: Uitgebreide beschrijving
+        type: text
+      - name: afbeelding
+        label: Afbeelding
+        type: image
+      - name: video
+        label: Videolink
+        type: string
+      - name: link
+        label: Link naar experiment
+        type: string
+  - name: archief
+    label: Archief
+    type: file
+    path: data/archief.json
+    format: json
+    list: true
+    fields:
+      - name: titel
+        label: Naam
+        type: string
+        required: true
+      - name: categorie
+        label: Categorie (zelf typen)
+        type: string
+        required: true
+      - name: jaar
+        label: Jaar
+        type: string
+      - name: samenvatting
+        label: Korte beschrijving
+        type: text
+      - name: beschrijving
+        label: Uitgebreide beschrijving
+        type: text
+      - name: afbeelding
+        label: Afbeelding
+        type: image
+      - name: video
+        label: Videolink
+        type: string
+      - name: link
+        label: Link
+        type: string
