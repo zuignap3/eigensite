@@ -1,0 +1,41 @@
+# Bewerken via https://app.pagescms.org (inloggen met GitHub)
+# Alleen de eigenaar van de GitHub-repository kan deze inhoud publiceren.
+media:
+  input: media
+  output: /media
+  rename: safe
+content:
+  - name: portfolio
+    label: Portfolioprojecten
+    type: file
+    path: data/portfolio.json
+    format: json
+    list: true
+    fields:
+      - name: titel
+        label: Projectnaam
+        type: string
+        required: true
+      - name: categorie
+        label: Categorie
+        type: select
+        options:
+          values: [Video, Fotografie, Grafisch ontwerp, CMD, Overig]
+      - name: jaar
+        label: Jaar
+        type: string
+      - name: samenvatting
+        label: Korte beschrijving (op de kaart)
+        type: text
+      - name: beschrijving
+        label: Uitgebreide beschrijving
+        type: text
+      - name: afbeelding
+        label: Omslagafbeelding
+        type: image
+      - name: video
+        label: Videolink (YouTube of Vimeo)
+        type: string
+      - name: link
+        label: Link naar het project
+        type: string
