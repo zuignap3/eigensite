@@ -46,6 +46,10 @@ function imageOrPlaceholder(project, large = false) {
   }
   return wrap;
 }
+function projectDetailUrl(project) {
+  const params = new URLSearchParams({ collectie: collection, project: project.slug || project.titel || '' });
+  return 'project.html?' + params.toString();
+}
 function openProject(project) {
   dialogContent.replaceChildren();
   dialogContent.append(imageOrPlaceholder(project, true));
@@ -65,6 +69,9 @@ function openProject(project) {
     const a = node('a', 'text-link', 'Bekijk het project ↗');
     a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer'; links.append(a);
   }
+  const detail = node('a', 'text-link', 'Bekijk volledige projectpagina ↗');
+  detail.href = projectDetailUrl(project);
+  links.prepend(detail);
   dialogContent.append(links);
   dialog.showModal();
 }

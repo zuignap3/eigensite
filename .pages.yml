@@ -20,6 +20,10 @@ content:
         label: Categorie
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -38,6 +42,34 @@ content:
       - name: link
         label: Link naar het project
         type: string
+      - name: blokken
+        label: Inhoud van de projectpagina (sleep blokken in de gewenste volgorde)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{soort} — {kop}"
+        fields:
+          - name: soort
+            label: Soort blok
+            type: select
+            options:
+              values: [Tekst, Afbeelding, Video]
+          - name: kop
+            label: Kop (optioneel)
+            type: string
+          - name: tekst
+            label: Tekst (voor een tekstblok)
+            type: text
+          - name: afbeelding
+            label: Afbeelding (voor een afbeeldingsblok)
+            type: image
+          - name: bijschrift
+            label: Bijschrift (optioneel)
+            type: string
+          - name: video
+            label: YouTube- of Vimeo-link (voor videoblok)
+            type: string
 
   - name: projecten
     label: Persoonlijke projecten
@@ -54,6 +86,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -72,6 +108,34 @@ content:
       - name: link
         label: Projectlink
         type: string
+      - name: blokken
+        label: Inhoud van de projectpagina (sleep blokken in de gewenste volgorde)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{soort} — {kop}"
+        fields:
+          - name: soort
+            label: Soort blok
+            type: select
+            options:
+              values: [Tekst, Afbeelding, Video]
+          - name: kop
+            label: Kop (optioneel)
+            type: string
+          - name: tekst
+            label: Tekst (voor een tekstblok)
+            type: text
+          - name: afbeelding
+            label: Afbeelding (voor een afbeeldingsblok)
+            type: image
+          - name: bijschrift
+            label: Bijschrift (optioneel)
+            type: string
+          - name: video
+            label: YouTube- of Vimeo-link (voor videoblok)
+            type: string
   - name: playground
     label: Playground
     type: file
@@ -87,6 +151,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -105,6 +173,34 @@ content:
       - name: link
         label: Link naar experiment
         type: string
+      - name: blokken
+        label: Inhoud van de projectpagina (sleep blokken in de gewenste volgorde)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{soort} — {kop}"
+        fields:
+          - name: soort
+            label: Soort blok
+            type: select
+            options:
+              values: [Tekst, Afbeelding, Video]
+          - name: kop
+            label: Kop (optioneel)
+            type: string
+          - name: tekst
+            label: Tekst (voor een tekstblok)
+            type: text
+          - name: afbeelding
+            label: Afbeelding (voor een afbeeldingsblok)
+            type: image
+          - name: bijschrift
+            label: Bijschrift (optioneel)
+            type: string
+          - name: video
+            label: YouTube- of Vimeo-link (voor videoblok)
+            type: string
   - name: archief
     label: Archief
     type: file
@@ -120,6 +216,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -138,3 +238,31 @@ content:
       - name: link
         label: Link
         type: string
+      - name: blokken
+        label: Inhoud van de projectpagina (sleep blokken in de gewenste volgorde)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{soort} — {kop}"
+        fields:
+          - name: soort
+            label: Soort blok
+            type: select
+            options:
+              values: [Tekst, Afbeelding, Video]
+          - name: kop
+            label: Kop (optioneel)
+            type: string
+          - name: tekst
+            label: Tekst (voor een tekstblok)
+            type: text
+          - name: afbeelding
+            label: Afbeelding (voor een afbeeldingsblok)
+            type: image
+          - name: bijschrift
+            label: Bijschrift (optioneel)
+            type: string
+          - name: video
+            label: YouTube- of Vimeo-link (voor videoblok)
+            type: string
