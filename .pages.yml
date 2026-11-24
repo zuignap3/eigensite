@@ -20,6 +20,10 @@ content:
         label: Categorie
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -82,6 +86,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -143,6 +151,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
@@ -204,6 +216,10 @@ content:
         label: Categorie (zelf typen)
         type: string
         required: true
+      - name: slug
+        label: Vaste linknaam (optioneel, uniek per pagina)
+        type: string
+        description: "Bijvoorbeeld: mijn-eerste-video. Als je dit leeg laat, wordt de projecttitel gebruikt."
       - name: jaar
         label: Jaar
         type: string
