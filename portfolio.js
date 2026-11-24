@@ -72,6 +72,11 @@ function openProject(project) {
   const detail = node('a', 'text-link', 'Bekijk volledige projectpagina ↗');
   detail.href = projectDetailUrl(project);
   links.prepend(detail);
+  const source = safeUrl(project.github);
+  if (source) {
+    const a = node('a', 'text-link', 'Bekijk de code op GitHub ↗');
+    a.href = source; a.target = '_blank'; a.rel = 'noopener noreferrer'; links.append(a);
+  }
   dialogContent.append(links);
   dialog.showModal();
 }
