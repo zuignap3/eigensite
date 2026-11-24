@@ -4,6 +4,7 @@ const count = document.querySelector('#project-count');
 const dialog = document.querySelector('#project-dialog');
 const dialogContent = document.querySelector('#dialog-content');
 const filterContainer = document.querySelector('#portfolio-filters');
+const collection = document.body.dataset.collection || 'portfolio';
 let projects = [];
 let activeFilter = 'Alles';
 
@@ -71,7 +72,8 @@ function renderFilters() {
   const categories = [...new Set(projects.map(project => String(project.categorie || 'Overig').trim() || 'Overig'))].sort((a, b) => a.localeCompare(b, 'nl'));
   if (activeFilter !== 'Alles' && !categories.includes(activeFilter)) activeFilter = 'Alles';
   filterContainer.replaceChildren();
-  for (const category of ['Alles', ...categories]) {
+  filterContainer.hidden = categories.length === 0;
+  for (const category of [...(categories.length > 1 ? ['Alles'] : []), ...categories]) {
     const button = node('button', 'filter-chip' + (category === activeFilter ? ' is-active' : ''), category);
     button.type = 'button';
     button.dataset.filter = category;
@@ -106,7 +108,7 @@ function render() {
     grid.append(card);
   }
 }
-fetch('data/portfolio.json', {cache: 'no-cache'})
+fetch('data/' + collection + '.json', {cache: 'no-cache'})
   .then(response => { if (!response.ok) throw new Error('Portfolio kon niet geladen worden'); return response.json(); })
   .then(data => { if (!Array.isArray(data)) throw new Error('Portfolio heeft niet het verwachte formaat'); projects = data; renderFilters(); render(); })
   .catch(() => {
