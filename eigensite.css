@@ -1,0 +1,44 @@
+/* Eigen site — homepage v1. Warm, rustig en bewust een beetje ouderwets. */
+:root{--paper:#f4f0e7;--ink:#282d2b;--muted:#6f7470;--line:#d1d0c7;--accent:#bd6943;--highlight:#ece6da}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.site-shell{width:min(100% - 56px,990px);margin:0 auto}
+.skip-link{position:absolute;top:-80px;left:20px;background:var(--ink);color:white;padding:10px;z-index:5}
+.skip-link:focus{top:12px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;font-size:31px;font-weight:bold;letter-spacing:-1.7px;line-height:1}
+.brand-dot,.accent{color:var(--accent)}
+.top-nav{display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,34px)}
+.top-nav a,.footer-links a{font:14px Arial,Helvetica,sans-serif;text-decoration:none}
+.top-nav a:hover,.footer-links a:hover{text-decoration:underline;text-underline-offset:5px}
+.hero{padding:clamp(72px,12vw,148px) 0 112px;max-width:760px}
+.eyebrow,.mini-label,.section-heading>span,.destination-no,.copyright{font:11px Arial,Helvetica,sans-serif;letter-spacing:1.5px;color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:10px}
+.status-dot{width:7px;height:7px;border-radius:50%;background:#79917a}
+h1,h2,p{margin-top:0}
+h1{font-size:clamp(57px,9vw,104px);line-height:1.04;letter-spacing:-4.7px;margin:27px 0 32px;font-weight:normal}
+.hero-lead{font-size:clamp(22px,3vw,30px);line-height:1.42;max-width:670px;margin-bottom:21px}
+.hero-copy{font:16px/1.8 Arial,Helvetica,sans-serif;color:var(--muted);max-width:570px}
+.text-link{display:inline-flex;gap:15px;align-items:center;margin-top:24px;font:15px Arial,Helvetica,sans-serif;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:7px}
+.text-link:hover{color:var(--accent);border-color:var(--accent)}
+.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);padding-bottom:22px}
+.section-heading h2{font-size:31px;letter-spacing:-.8px;font-weight:normal;margin:0}
+.link-grid{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid var(--line);border-top:0}
+.destination{display:flex;align-items:flex-start;gap:18px;min-height:164px;padding:29px 23px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-decoration:none;transition:background-color .2s ease}
+.destination:hover{background:var(--highlight)}
+.destination-body{display:grid;gap:8px;flex:1}
+.destination-body strong{font-size:24px;font-weight:normal}
+.destination-body small{font:14px/1.6 Arial,Helvetica,sans-serif;color:var(--muted)}
+.destination-arrow{font:20px Arial,Helvetica,sans-serif;color:var(--accent)}
+.note{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:90px 0 100px;margin-top:30px}
+.note h2{font-size:clamp(27px,3.3vw,39px);line-height:1.25;font-weight:normal;letter-spacing:-.7px;margin:17px 0 0}
+.note p{align-self:end;font:15px/1.85 Arial,Helvetica,sans-serif;color:var(--muted);margin:0}
+.site-footer{display:flex;align-items:start;gap:35px;justify-content:space-between;border-top:1px solid var(--line);padding:30px 0 50px;font:13px/1.7 Arial,Helvetica,sans-serif}
+.site-footer>div:first-child{display:grid;gap:3px}.site-footer>div:first-child span{color:var(--muted)}
+.footer-links{display:flex;gap:20px}
+.copyright{white-space:nowrap;padding-top:2px}
+@media(max-width:650px){.site-shell{width:min(100% - 36px,990px)}.site-header{padding:24px 0}.top-nav{gap:14px}.top-nav a{font-size:12px}.hero{padding:82px 0 87px}h1{letter-spacing:-2.7px}.link-grid{grid-template-columns:1fr}.destination{min-height:130px;padding:24px 16px}.note{grid-template-columns:1fr;gap:20px;padding:55px 0 72px}.site-footer{flex-wrap:wrap;gap:22px}.copyright{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.destination{transition:none}}
