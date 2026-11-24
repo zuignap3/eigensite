@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "titel": "Visjes",
+    "categorie": "Websites",
+    "slug": "visjes-site",
+    "jaar": "2026",
+    "samenvatting": "Een ouder websiteproject om de oceaan te verkennen en meer over vissen te leren.",
+    "beschrijving": "Visjes was een persoonlijk experiment met HTML en CSS. Het idee was om een interactieve oceaan te maken waarin je vissen kunt ontdekken en er meer over kunt leren. Het project is niet afgemaakt en ik verwacht er voorlopig niet verder aan te werken.",
+    "afbeelding": "https://raw.githubusercontent.com/zuignap3/visjes-site/main/images/logo.png",
+    "video": "",
+    "link": "https://zuignap3.github.io/visjes-site/",
+    "github": "https://github.com/zuignap3/visjes-site",
+    "blokken": []
+  }
+]

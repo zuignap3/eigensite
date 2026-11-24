@@ -241,6 +241,9 @@ content:
       - name: link
         label: Link
         type: string
+      - name: github
+        label: GitHub-repository (optioneel)
+        type: string
       - name: blokken
         label: Inhoud van de projectpagina (sleep blokken in de gewenste volgorde)
         type: object
